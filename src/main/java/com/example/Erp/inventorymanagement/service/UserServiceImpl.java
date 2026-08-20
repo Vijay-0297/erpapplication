@@ -3,15 +3,21 @@ package com.example.Erp.inventorymanagement.service;
 import com.example.Erp.inventorymanagement.dto.UserRequest;
 import com.example.Erp.inventorymanagement.dto.UserResponse;
 import com.example.Erp.inventorymanagement.dto.UserUpdate;
+import com.example.Erp.inventorymanagement.exception.UsernameAlreadyExistsException;
 import com.example.Erp.inventorymanagement.model.Role;
 import com.example.Erp.inventorymanagement.model.User;
 import com.example.Erp.inventorymanagement.repository.RoleRepository;
 import com.example.Erp.inventorymanagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -112,6 +118,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Integer id) {
 
+    }
+
+    @ExceptionHandler(UsernameAlreadyExistsException.class)
+    public ResponseEntity<?> handleUsernameAlreadyExists(
+            UsernameAlreadyExistsException ex) {
+
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(Map.of(
+                        "timestamp", LocalDateTime.now(),
+                        "status", 409,
+                        "error", "Conflict",
+                        "message", ex.getMessage()
+                ));
     }
 
 }

@@ -60,4 +60,5 @@ public class Role {
     protected void onUpdate() {
         updatedAt = OffsetDateTime.now();
     }
+
 }
