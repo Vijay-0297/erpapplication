@@ -1,7 +1,5 @@
 package com.example.Erp.inventorymanagement.config;
 
-import com.example.Erp.inventorymanagement.config.CustomUserDetailsService;
-import com.example.Erp.inventorymanagement.config.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,8 +16,7 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-public class JwtAuthenticationFilter
-        extends OncePerRequestFilter {
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtUtil jwtUtil;
     private final CustomUserDetailsService userDetailsService;
@@ -31,36 +28,49 @@ public class JwtAuthenticationFilter
             FilterChain filterChain)
             throws ServletException, IOException {
 
-        String authHeader =
+        final String authHeader =
                 request.getHeader("Authorization");
 
-        // No token -> continue
-        if (authHeader == null
-                || !authHeader.startsWith("Bearer ")) {
-
+        // No Authorization header
+        if (authHeader == null || authHeader.isBlank()) {
             filterChain.doFilter(request, response);
             return;
         }
 
-        String token = authHeader.substring(7);
+        // Authorization header must be Bearer token
+        if (!authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        final String token = authHeader.substring(7).trim();
+
+        if (token.isBlank()) {
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         try {
 
-            String email =
-                    jwtUtil.extractUsername(token);
+            // This value MUST be the same value used
+            // when loading the user.
+            String username = jwtUtil.extractUsername(token);
 
-            if (email != null
-                    && SecurityContextHolder
-                    .getContext()
-                    .getAuthentication() == null) {
+            if (username != null &&
+                    SecurityContextHolder
+                            .getContext()
+                            .getAuthentication() == null) {
 
                 UserDetails userDetails =
-                        userDetailsService
-                                .loadUserByUsername(email);
+                        userDetailsService.loadUserByUsername(username);
 
-                if (jwtUtil.isTokenValid(
-                        token,
-                        userDetails)) {
+                boolean valid =
+                        jwtUtil.isTokenValid(
+                                token,
+                                userDetails
+                        );
+
+                if (valid) {
 
                     UsernamePasswordAuthenticationToken authentication =
                             new UsernamePasswordAuthenticationToken(
@@ -82,9 +92,14 @@ public class JwtAuthenticationFilter
 
         } catch (Exception e) {
 
-            // Invalid token.
-            // Do not manually return 403 here.
+            // Clear authentication if JWT is invalid
             SecurityContextHolder.clearContext();
+
+            // Print the REAL reason while developing
+            System.out.println(
+                    "JWT Authentication failed: "
+                            + e.getMessage()
+            );
         }
 
         filterChain.doFilter(request, response);

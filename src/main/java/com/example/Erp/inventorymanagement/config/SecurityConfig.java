@@ -23,18 +23,10 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomUserDetailsService userDetailsService;
 
-    // =========================
-    // PASSWORD ENCODER
-    // =========================
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    // =========================
-    // AUTHENTICATION PROVIDER
-    // =========================
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -47,10 +39,6 @@ public class SecurityConfig {
         return provider;
     }
 
-    // =========================
-    // AUTHENTICATION MANAGER
-    // =========================
-
     @Bean
     public AuthenticationManager authenticationManager() {
 
@@ -59,67 +47,62 @@ public class SecurityConfig {
         );
     }
 
-    // =========================
-    // MODELMAPPER
-    // =========================
-
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
-
-    // =========================
-    // SECURITY FILTER CHAIN
-    // =========================
 
     @Bean
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http) throws Exception {
 
         http
-
-                // Disable CSRF because this is a JWT REST API
                 .csrf(csrf -> csrf.disable())
 
-                // JWT does not use HTTP sessions
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
                                 SessionCreationPolicy.STATELESS
                         )
                 )
 
-                // Authorization rules
                 .authorizeHttpRequests(auth -> auth
 
-                        // -------------------------
-                        // PUBLIC ENDPOINTS
-                        // -------------------------
-
+                        // LOGIN / REGISTER
                         .requestMatchers(
                                 "/api/auth/login",
                                 "/api/auth/register"
                         ).permitAll()
 
-                        // -------------------------
-                        // USER ENDPOINTS
-                        // -------------------------
+                        // ALL AUTHENTICATED APIs
+                        .requestMatchers("/api/users/**")
+                        .authenticated()
 
-                        .requestMatchers(
-                                "/api/users/**",
-                                "/api/categories/**",
-                                "/api/products/**",
-                                "/api/inventory/**"
-                        ).hasRole("USER")
+                        .requestMatchers("/api/categories/**")
+                        .authenticated()
 
-                        // -------------------------
+                        .requestMatchers("/api/products/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/inventory/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/suppliers/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/customers/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/purchases/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/sales/**")
+                        .authenticated()
+
                         // EVERYTHING ELSE
-                        // -------------------------
-
                         .anyRequest()
                         .authenticated()
                 )
 
-                // JWT filter
                 .addFilterBefore(
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class

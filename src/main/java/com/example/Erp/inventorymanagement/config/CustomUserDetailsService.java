@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CustomUserDetailsService
-        implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
@@ -20,8 +19,7 @@ public class CustomUserDetailsService
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
 
-        User user = userRepository
-                .findByUsername(username)
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(() ->
                         new UsernameNotFoundException(
                                 "User not found: " + username
@@ -31,11 +29,13 @@ public class CustomUserDetailsService
         String role = "USER";
 
         if (user.getRole() != null &&
-                user.getRole().getRoleName() != null) {
+                user.getRole().getRoleName() != null &&
+                !user.getRole().getRoleName().isBlank()) {
 
-            role = user.getRole().getRoleName();
+            role = user.getRole().getRoleName().trim().toUpperCase();
         }
 
+        // Make sure authority is ROLE_USER, ROLE_ADMIN, etc.
         if (!role.startsWith("ROLE_")) {
             role = "ROLE_" + role;
         }
@@ -43,9 +43,7 @@ public class CustomUserDetailsService
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getUsername())
                 .password(user.getPasswordHash())
-                .authorities(
-                        new SimpleGrantedAuthority(role)
-                )
+                .authorities(new SimpleGrantedAuthority(role))
                 .build();
     }
 }
