@@ -1,10 +1,10 @@
 package com.example.Erp.inventorymanagement;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringBootConfiguration;
 
-@SpringBootTest
-class ErpInventorymanagementApplicationTests {
+@SpringBootConfiguration
+public class ErpInventorymanagementApplicationTests {
 
 	@Test
 	void contextLoads() {
