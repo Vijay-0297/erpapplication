@@ -9,15 +9,10 @@ import com.example.Erp.inventorymanagement.model.User;
 import com.example.Erp.inventorymanagement.repository.RoleRepository;
 import com.example.Erp.inventorymanagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
 
 @Service
@@ -32,10 +27,10 @@ public class UserServiceImpl implements UserService {
     public UserResponse create(UserRequest dto) {
 
         if (userRepository.existsByUsername(dto.getUsername()))
-            throw new RuntimeException("Username already exists");
+            throw new UsernameAlreadyExistsException("Username already exists");
 
         if (userRepository.existsByEmail(dto.getEmail()))
-            throw new RuntimeException("Email already exists");
+            throw new UsernameAlreadyExistsException("Email already exists");
 
         Role role = roleRepository.findById(Long.valueOf(dto.getRoleId()))
                 .orElseThrow(() -> new RuntimeException("Role not found"));
@@ -44,6 +39,7 @@ public class UserServiceImpl implements UserService {
 
         user.setUsername(dto.getUsername());
         user.setPasswordHash(passwordEncoder.encode(dto.getPassword()));
+        user.setMobile(dto.getMobile());
         user.setEmail(dto.getEmail());
         user.setFullName(dto.getFullName());
         user.setRole(role);
@@ -68,6 +64,7 @@ public class UserServiceImpl implements UserService {
         return UserResponse.builder()
                 .userId(user.getUserId())
                 .username(user.getUsername())
+                .mobile(user.getMobile())
                 .email(user.getEmail())
                 .fullName(user.getFullName())
                 .role(user.getRole().getRoleName())
@@ -77,11 +74,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserResponse> getAll() {
-
-        return userRepository.findAll()
-                .stream()
-                .map(this::map)
-                .toList();
+        return userRepository.findAll() .stream()
+                .map(this::map) .toList();
     }
 
     @Override
@@ -92,6 +86,10 @@ public class UserServiceImpl implements UserService {
 
         if (dto.getEmail() != null) {
             user.setEmail(dto.getEmail());
+        }
+
+        if (dto.getMobile() != null) {
+            user.setMobile(dto.getMobile());
         }
 
         if (dto.getFullName() != null) {
@@ -118,20 +116,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Integer id) {
 
-    }
-
-    @ExceptionHandler(UsernameAlreadyExistsException.class)
-    public ResponseEntity<?> handleUsernameAlreadyExists(
-            UsernameAlreadyExistsException ex) {
-
-        return ResponseEntity
-                .status(HttpStatus.CONFLICT)
-                .body(Map.of(
-                        "timestamp", LocalDateTime.now(),
-                        "status", 409,
-                        "error", "Conflict",
-                        "message", ex.getMessage()
-                ));
     }
 
 }

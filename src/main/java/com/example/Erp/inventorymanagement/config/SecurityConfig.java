@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -76,7 +75,8 @@ public class SecurityConfig {
     }
 
     // =========================
-    // CORS (needed for Postman/browser clients hitting a JWT API)
+    // CORS
+    // (needed so Postman preflight / a future frontend isn't blocked)
     // =========================
 
     @Bean
@@ -92,8 +92,10 @@ public class SecurityConfig {
     }
 
     // =========================
-    // CLEARER 403 RESPONSES
-    // (so you see WHY access was denied instead of a blank body)
+    // CLEAR ERROR RESPONSES
+    // 401 = no/invalid token, 403 = valid token but wrong role.
+    // Without these, Spring silently returns an EMPTY 403 body for both
+    // cases, which is why it looked like everything was "403 forbidden".
     // =========================
 
     @Bean
@@ -102,7 +104,18 @@ public class SecurityConfig {
             response.setStatus(403);
             response.setContentType("application/json");
             response.getWriter().write(
-                    "{\"error\":\"Forbidden\",\"message\":\"" + ex.getMessage() + "\"}"
+                    "{\"status\":403,\"error\":\"Forbidden\",\"message\":\"You do not have permission to access this resource.\"}"
+            );
+        };
+    }
+
+    @Bean
+    public org.springframework.security.web.AuthenticationEntryPoint authenticationEntryPoint() {
+        return (request, response, ex) -> {
+            response.setStatus(401);
+            response.setContentType("application/json");
+            response.getWriter().write(
+                    "{\"status\":401,\"error\":\"Unauthorized\",\"message\":\"Missing or invalid Bearer token. Login via /api/auth/login first.\"}"
             );
         };
     }
@@ -117,10 +130,12 @@ public class SecurityConfig {
 
         http
 
+                // Disable CSRF because this is a JWT REST API
                 .csrf(csrf -> csrf.disable())
 
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
+                // JWT does not use HTTP sessions
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
                                 SessionCreationPolicy.STATELESS
@@ -128,43 +143,41 @@ public class SecurityConfig {
                 )
 
                 .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint(authenticationEntryPoint())
                         .accessDeniedHandler(accessDeniedHandler())
                 )
 
+                // Authorization rules
                 .authorizeHttpRequests(auth -> auth
 
                         // -------------------------
                         // PUBLIC ENDPOINTS
                         // -------------------------
 
-                        // Allow preflight requests through
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
 
                         .requestMatchers(
                                 "/api/auth/login",
-                                "/api/auth/register",
-                                "/api/users/register"   // <-- remove this line if user creation is NOT here
+                                "/api/auth/register"
                         ).permitAll()
 
                         // -------------------------
-                        // USER ENDPOINTS
+                        // EVERYTHING ELSE REQUIRES A VALID BEARER TOKEN
                         // -------------------------
 
-                        .requestMatchers(
-                                "/api/users/**",
-                                "/api/categories/**",
-                                "/api/products/**",
-                                "/api/inventory/**"
-                        ).hasAuthority("ROLE_USER")
+                        .requestMatchers("/api/users/**").authenticated()
+                        .requestMatchers("/api/categories/**").authenticated()
+                        .requestMatchers("/api/products/**").authenticated()
+                        .requestMatchers("/api/inventory/**").authenticated()
+                        .requestMatchers("/api/suppliers/**").authenticated()
+                        .requestMatchers("/api/customers/**").authenticated()
+                        .requestMatchers("/api/purchases/**").authenticated()
+                        .requestMatchers("/api/sales/**").authenticated()
 
-                        // -------------------------
-                        // EVERYTHING ELSE
-                        // -------------------------
-
-                        .anyRequest()
-                        .authenticated()
+                        .anyRequest().authenticated()
                 )
 
+                // JWT filter
                 .addFilterBefore(
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class

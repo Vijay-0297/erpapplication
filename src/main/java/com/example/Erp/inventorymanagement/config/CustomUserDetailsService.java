@@ -9,6 +9,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * IMPORTANT: The whole auth flow (AuthService, JwtUtil, JwtAuthenticationFilter)
+ * uses the user's EMAIL as the JWT subject / login identifier.
+ * So this lookup MUST match by email, not by the "username" column,
+ * otherwise every token fails validation and every protected endpoint
+ * returns 403 even with a valid Bearer token.
+ */
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
@@ -16,13 +23,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username)
+    public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
 
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByEmail(email)
                 .orElseThrow(() ->
                         new UsernameNotFoundException(
-                                "User not found: " + username
+                                "User not found: " + email
                         )
                 );
 
@@ -41,7 +48,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         return org.springframework.security.core.userdetails.User
-                .withUsername(user.getUsername())
+                .withUsername(user.getEmail())
                 .password(user.getPasswordHash())
                 .authorities(new SimpleGrantedAuthority(role))
                 .build();
