@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b0afeb6c-8675-4423-9aa9-e67229e48fde" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/DataSeeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/SalesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SalesRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SalesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/exception/UsernameAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Sales.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/SalesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SalesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SalesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/ErpInventorymanagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/ErpInventorymanagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/SuppliersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/SuppliersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CategoryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CategoryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CategoryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CategoryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/CustomerUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/ProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/ProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseItemResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/RoleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/RoleRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/RoleResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/RoleResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SuppliersRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SuppliersRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SuppliersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/SuppliersResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/dto/UserUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/PurchaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/PurchaseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/SuppliersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/SuppliersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SuppliersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SuppliersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SuppliersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/SuppliersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/java/com/example/Erp/inventorymanagement/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erpapplication/src/test/java/com/example/Erp/inventorymanagement/ErpInventorymanagementApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/erpapplication/src/test/java/com/example/Erp/inventorymanagement/ErpInventorymanagementApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Erptask" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3IOd392RTS1TsvPbD7orVIcRfqG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.erpapplication.executor": "Run",
+    "Maven.Erp-inventorymanagement [org.apache.maven.plugins:maven-clean-plugin:3.5.0:clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.ErpInventorymanagementApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Source/Erp inventorymanagement/Erp-inventorymanagement",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0afeb6c-8675-4423-9aa9-e67229e48fde" name="Changes" comment="" />
+      <created>1787639347221</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1787639347221</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
