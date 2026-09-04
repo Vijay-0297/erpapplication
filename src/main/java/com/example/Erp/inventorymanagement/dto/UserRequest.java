@@ -17,7 +17,7 @@ public class UserRequest {
     private String password;
 
     @Pattern(
-            regexp = "^[0-9]{10,15}$",
+            regexp = "^[0-9]{10}$",
             message = "Mobile number must contain only 10 to 15 digits"
     )
     @NotBlank(message = "Mobile number is required")
