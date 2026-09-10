@@ -3,6 +3,7 @@ package com.example.Erp.inventorymanagement.controller;
 import com.example.Erp.inventorymanagement.dto.AuthResponse;
 import com.example.Erp.inventorymanagement.dto.LoginRequest;
 import com.example.Erp.inventorymanagement.dto.RegisterRequest;
+import com.example.Erp.inventorymanagement.dto.RegisterResponse;
 import com.example.Erp.inventorymanagement.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,11 +19,11 @@ public class AuthController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(
+    public ResponseEntity<RegisterResponse> register(
             @RequestBody RegisterRequest request
     ) {
 
-        AuthResponse response =
+        RegisterResponse response =
                 authenticationService.register(request);
 
         return ResponseEntity

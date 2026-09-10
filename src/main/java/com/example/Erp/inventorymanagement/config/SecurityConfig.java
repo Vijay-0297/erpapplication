@@ -98,6 +98,12 @@ public class SecurityConfig {
                         .requestMatchers("/api/sales/**")
                         .authenticated()
 
+                        .requestMatchers("/api/sales_returns/**")
+                        .authenticated()
+
+                        .requestMatchers("/api/roles/**")
+                        .authenticated()
+
                         // EVERYTHING ELSE
                         .anyRequest()
                         .authenticated()

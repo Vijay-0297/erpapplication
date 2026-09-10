@@ -3,6 +3,7 @@ package com.example.Erp.inventorymanagement.service;
 import com.example.Erp.inventorymanagement.dto.AuthResponse;
 import com.example.Erp.inventorymanagement.dto.LoginRequest;
 import com.example.Erp.inventorymanagement.dto.RegisterRequest;
+import com.example.Erp.inventorymanagement.dto.RegisterResponse;
 import com.example.Erp.inventorymanagement.model.User;
 import com.example.Erp.inventorymanagement.repository.UserRepository;
 import com.example.Erp.inventorymanagement.config.JwtUtil;
@@ -23,7 +24,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
 
-    public AuthResponse register(
+    public RegisterResponse register(
             RegisterRequest request) {
 
         if (userRepository.existsByUsername(
@@ -67,9 +68,8 @@ public class AuthService {
         String token =
                 jwtUtil.generateToken(userDetails);
 
-        return new AuthResponse(
-                token,
-                "Bearer"
+        return new RegisterResponse(
+
         );
     }
 

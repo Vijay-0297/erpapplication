@@ -1,13 +1,16 @@
-package com.example.Erp.inventorymanagement.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+        package com.example.Erp.inventorymanagement.dto;
 
-@Getter
-@Setter
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoginRequest {
 
     private String email;
-
     private String password;
 }
+

@@ -1,5 +1,4 @@
-
-        package com.example.Erp.inventorymanagement.dto;
+package com.example.Erp.inventorymanagement.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterRequest {
+public class RegisterResponse {
 
+    private Long id;
     private String username;
     private String email;
-    private String password;
     private String fullName;
+    private String message;
 }
-

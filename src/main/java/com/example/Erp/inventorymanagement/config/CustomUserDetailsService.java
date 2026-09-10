@@ -1,4 +1,5 @@
-package com.example.Erp.inventorymanagement.config;
+
+        package com.example.Erp.inventorymanagement.config;
 
 import com.example.Erp.inventorymanagement.model.User;
 import com.example.Erp.inventorymanagement.repository.UserRepository;
@@ -9,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
@@ -16,34 +19,21 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username)
+    public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
 
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByEmail(email)
                 .orElseThrow(() ->
                         new UsernameNotFoundException(
-                                "User not found: " + username
+                                "User not found with email: " + email
                         )
                 );
 
-        String role = "USER";
-
-        if (user.getRole() != null &&
-                user.getRole().getRoleName() != null &&
-                !user.getRole().getRoleName().isBlank()) {
-
-            role = user.getRole().getRoleName().trim().toUpperCase();
-        }
-
-        // Make sure authority is ROLE_USER, ROLE_ADMIN, etc.
-        if (!role.startsWith("ROLE_")) {
-            role = "ROLE_" + role;
-        }
-
         return org.springframework.security.core.userdetails.User
-                .withUsername(user.getUsername())
+                .withUsername(user.getEmail())
                 .password(user.getPasswordHash())
-                .authorities(new SimpleGrantedAuthority(role))
+                .authorities("ROLE_USER")
                 .build();
     }
 }
+

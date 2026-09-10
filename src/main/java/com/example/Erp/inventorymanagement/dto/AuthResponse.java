@@ -1,13 +1,15 @@
-package com.example.Erp.inventorymanagement.dto;
+package  com.example.Erp.inventorymanagement.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class AuthResponse {
 
-    private String accessToken;
-
+    private String token;
     private String tokenType;
 }
+
