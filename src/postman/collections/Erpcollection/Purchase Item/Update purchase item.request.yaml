@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:8080/api/purchase-items/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"purchaseId\": 1,\r
+
+    \    \"productId\": 1,\r
+
+    \    \"quantity\": 27,\r
+
+    \    \"purchasePrice\": 275.00\r
+
+    }"
+settings: {}
+order: 6000

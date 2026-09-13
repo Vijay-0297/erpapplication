@@ -1,0 +1,24 @@
+$kind: http-request
+url: http://localhost:8080/api/sales
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"customerId\": 1,\r
+
+    \  \"invoiceNumber\": \"INV-1001\",\r
+
+    \  \"totalAmount\": 2499.50,\r
+
+    \  \"paymentStatus\": \"PAID\",\r
+
+    \  \"createdBy\": 1\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 1000

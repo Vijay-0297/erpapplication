@@ -1,0 +1,20 @@
+$kind: http-request
+url: http://localhost:8080/api/customers/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"customerName\": \"Vijay Kumar\",\r
+
+    \  \"phone\": \"9999999999\",\r
+
+    \  \"email\": \"vijay@gmail.com\",\r
+
+    \  \"address\": \"Chennai\",\r
+
+    \  \"status\": \"active\"\r
+
+    }"
+settings: {}
+order: 4000

@@ -1,0 +1,26 @@
+$kind: http-request
+url: http://localhost:8080/api/purchases
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"supplierId\": 1,\r
+
+    \    \"invoiceNumber\": \"INV-1001\",\r
+
+    \    \"purchaseDateTime\": \"2026-08-15T15:30:00\",\r
+
+    \    \"totalAmount\": 25000.00,\r
+
+    \    \"paymentStatus\": \"PAID\",\r
+
+    \    \"createdBy\": 1\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 1000

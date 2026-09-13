@@ -1,0 +1,8 @@
+name: Erp Environment
+values:
+  - key: token
+    value: ''
+  - key: base_url
+    value: ''
+  - key: id
+    value: ''

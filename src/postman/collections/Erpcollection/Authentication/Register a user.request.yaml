@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{base_url}}/api/auth/register"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\": \"Brock\",\r
+
+    \    \"email\": \"brock@gmail.com\",\r
+
+    \    \"password\": \"password123\",\r
+
+    \    \"fullName\": \"Brock Lesnar\",\r
+
+    \    \"mobile\": \"9876543210\",\r
+
+    \    \"roleId\": 1\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 1000

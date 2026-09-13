@@ -1,0 +1,34 @@
+$kind: http-request
+url: http://localhost:8080/api/products/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"categoryId\": 1,\r
+
+    \  \"productName\": \"Asus Laptop1\",\r
+
+    \  \"sku\": \"Asus1001\",\r
+
+    \  \"barcode\": \"9876543210987\",\r
+
+    \  \"purchasePrice\": 100000,\r
+
+    \  \"sellingPrice\": 110000,\r
+
+    \  \"stockQuantity\": 15,\r
+
+    \  \"minimumStock\": 3,\r
+
+    \  \"unit\": \"Piece\",\r
+
+    \  \"status\": \"active\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 4000

@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://localhost:8080/api/categories
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 2000

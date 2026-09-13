@@ -1,0 +1,22 @@
+$kind: http-request
+url: http://localhost:8080/api/purchase-items
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"purchaseId\": 1,\r
+
+    \    \"productId\": 1,\r
+
+    \    \"quantity\": 20,\r
+
+    \    \"purchasePrice\": 120.00\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 1000

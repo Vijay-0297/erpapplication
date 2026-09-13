@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:8080/api/sales-returns
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"saleId\": 1,\r
+
+    \    \"customerId\": 1,\r
+
+    \    \"totalAmount\": 1500.00,\r
+
+    \    \"refundStatus\": \"PENDING\",\r
+
+    \    \"notes\": \"Customer returned damaged products\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1000

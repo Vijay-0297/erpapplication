@@ -1,0 +1,5 @@
+$kind: http-request
+url: http://localhost:8080/api/purchases/1
+method: DELETE
+settings: {}
+order: 5000

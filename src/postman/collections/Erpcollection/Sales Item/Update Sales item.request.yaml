@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:8080/api/sales-items/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"saleId\": 1,\r
+
+    \    \"productId\": 5,\r
+
+    \    \"quantity\": 5,\r
+
+    \    \"sellingPrice\": 275.00\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 5000

@@ -1,0 +1,22 @@
+$kind: http-request
+url: http://localhost:8080/api/suppliers/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"supplierName\": \"ABC International Suppliers\",\r
+
+    \  \"contactPerson\": \"Ravi Kumar\",\r
+
+    \  \"phone\": \"9999999999\",\r
+
+    \  \"email\": \"abc@company.com\",\r
+
+    \  \"address\": \"Erode, Tamil Nadu\",\r
+
+    \  \"status\": \"ACTIVE\"\r
+
+    }"
+settings: {}
+order: 4000

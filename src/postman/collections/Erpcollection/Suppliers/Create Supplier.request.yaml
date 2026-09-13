@@ -1,0 +1,26 @@
+$kind: http-request
+url: http://localhost:8080/api/suppliers
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"supplierName\": \"ABCD Suppliers\",\r
+
+    \  \"contactPerson\": \"Ravi Kumar\",\r
+
+    \  \"phone\": \"9876543210\",\r
+
+    \  \"email\": \"abc@gmail.com\",\r
+
+    \  \"address\": \"Erode, Tamil Nadu\",\r
+
+    \  \"status\": \"ACTIVE\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+settings: {}
+order: 1000

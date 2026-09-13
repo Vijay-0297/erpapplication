@@ -3,6 +3,7 @@ package com.example.Erp.inventorymanagement.service;
 import com.example.Erp.inventorymanagement.dto.AuthResponse;
 import com.example.Erp.inventorymanagement.dto.LoginRequest;
 import com.example.Erp.inventorymanagement.dto.RegisterRequest;
+import com.example.Erp.inventorymanagement.dto.RegisterResponse;
 import com.example.Erp.inventorymanagement.model.User;
 import com.example.Erp.inventorymanagement.model.Role;
 import com.example.Erp.inventorymanagement.repository.RoleRepository;
@@ -26,7 +27,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
 
-    public AuthResponse register(RegisterRequest request) {
+    public RegisterResponse register(RegisterRequest request) {
 
         if (isBlank(request.getUsername()) ||
                 isBlank(request.getEmail()) ||
@@ -45,34 +46,40 @@ public class AuthService {
             throw new RuntimeException("Email already exists");
         }
 
-        // Assign the default USER role so user.getRole() is never null
-        Role defaultRole = roleRepository.findByRoleName("USER")
-                .orElseThrow(() -> new RuntimeException(
-                        "Default USER role missing – restart the app so DataSeeder can create it"));
+        // Fetch role by roleId if provided, else fallback to default USER role
+        Role role;
+        if (request.getRoleId() != null) {
+            role = roleRepository.findById(request.getRoleId().longValue())
+                    .orElseThrow(() -> new RuntimeException("Role not found with ID: " + request.getRoleId()));
+        } else {
+            role = roleRepository.findByRoleName("USER")
+                    .orElseThrow(() -> new RuntimeException(
+                            "Default USER role missing – restart the app so DataSeeder can create it"));
+        }
 
         User user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .passwordHash(passwordEncoder.encode(request.getPassword()))
                 .fullName(request.getFullName())
-                .role(defaultRole)
+                .mobile(request.getMobile())
+                .role(role)
                 .status("active")
                 .build();
 
         User savedUser = userRepository.save(user);
 
-        // Subject MUST be the email - CustomUserDetailsService looks users
-        // up by email, so every other part of the auth flow keys off it too.
-        UserDetails userDetails =
-                org.springframework.security.core.userdetails.User
-                        .withUsername(savedUser.getEmail())
-                        .password(savedUser.getPasswordHash())
-                        .authorities("ROLE_USER")
-                        .build();
-
-        String token = jwtUtil.generateToken(userDetails);
-
-        return new AuthResponse(token, "Bearer");
+        return RegisterResponse.builder()
+                .userId(savedUser.getUserId())
+                .username(savedUser.getUsername())
+                .email(savedUser.getEmail())
+                .fullName(savedUser.getFullName())
+                .mobile(savedUser.getMobile())
+                .roleId(savedUser.getRole().getRoleId().intValue())
+                .role(savedUser.getRole().getRoleName())
+                .status(savedUser.getStatus())
+                .message("User registered successfully")
+                .build();
     }
 
     public AuthResponse login(LoginRequest request) {
