@@ -1,5 +1,0 @@
-$kind: http-request
-url: DELETE http://localhost:8080/api/suppliers/1
-method: DELETE
-settings: {}
-order: 5000

@@ -1,9 +1,0 @@
-$kind: http-request
-url: http://localhost:8080/api/sales
-method: GET
-auth:
-  type: bearer
-  credentials:
-    token: "{{token}}"
-settings: {}
-order: 2000

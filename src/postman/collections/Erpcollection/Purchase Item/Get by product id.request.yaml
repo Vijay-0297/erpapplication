@@ -1,5 +1,0 @@
-$kind: http-request
-url: http://localhost:8080/api/purchase-items/product/1
-method: GET
-settings: {}
-order: 5000
