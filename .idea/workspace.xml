@@ -5,20 +5,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0afeb6c-8675-4423-9aa9-e67229e48fde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/SalesReturnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/RegisterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SalesReturnRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SalesReturnResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/SalesReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/SalesReturnRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SalesReturnService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SalesReturnServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Authentication/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Authentication/Login a user.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Authentication/Register a user.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/Create Category.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/Delete Category.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/Get all category.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/Get by category.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Category/Update category.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/Create customer.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/Delete customer.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/Get all customers.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/Get by customer id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Customers/Update customer.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/Create product.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/Delete product.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/Get all products.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/Get by product id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Products/Update product.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Create Purchase item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Get all purchase item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Get by product id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Get by purchase id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Get by purchase item id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchase Item/Update purchase item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/Create purchase.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/Delete purchase.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/Get all purchase.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/Get by purchase id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Purchases/Update purchase.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Role/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Role/CreateRoles.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Role/Get by all roles.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Role/Get by role Id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Role/Update role.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Create Sales Items.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Delete Sales item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Get all sales item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Get by sales item id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Get item by product.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Item/Update Sales item.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Create sales return.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Delete sales return.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Get all sales return.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Get returns by customer.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Get returns by refund status.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Get returns by sale.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Get sales return by id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales Return/Update sales return.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales/Create Sales.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales/Get all Sales.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales/Get by Sales id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Sales/Update by sales.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/Create Supplier.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/Delete Supplier.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/Get all suppliers.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/Get by Supplier ID.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Suppliers/Update Supplier.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Users/.resources/definition.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Users/Create user.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Users/Get all users.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Users/Get by user id.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/collections/Erpcollection/Users/Update User.request.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/environments/Erp Environment.environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/globals/workspace.globals.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/specs/Erp collections-1/Erp collections-1.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postman/specs/Erp collections/Erp collections.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

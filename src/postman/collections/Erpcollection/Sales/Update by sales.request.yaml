@@ -1,4 +1,0 @@
-$kind: http-request
-url: http://localhost:8080/api/sales/1
-method: PUT
-order: 4000

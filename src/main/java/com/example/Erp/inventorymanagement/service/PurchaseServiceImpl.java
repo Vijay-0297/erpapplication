@@ -11,11 +11,13 @@ import com.example.Erp.inventorymanagement.repository.SuppliersRepository;
 import com.example.Erp.inventorymanagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class PurchaseServiceImpl implements PurchaseService {
 
     private final PurchaseRepository purchaseRepository;
@@ -66,6 +68,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PurchaseResponse getById(Integer id) {
 
         return map(purchaseRepository.findById(id)
@@ -73,6 +76,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<PurchaseResponse> getAll() {
 
         return purchaseRepository.findAll()
@@ -91,19 +95,18 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     private PurchaseResponse map(Purchase purchase) {
+        Supplier supplier = purchase.getSupplier();
+        User createdBy = purchase.getCreatedBy();
 
         return PurchaseResponse.builder()
                 .purchaseId(purchase.getPurchaseId())
-                .supplierId(purchase.getSupplier().getSupplierId())
-                .supplierName(purchase.getSupplier().getSupplierName() != null
-                                ? purchase.getSupplier().getSupplierName()
-                                : null
-                )
+                .supplierId(supplier != null ? supplier.getSupplierId() : null)
+                .supplierName(supplier != null ? supplier.getSupplierName() : null)
                 .invoiceNumber(purchase.getInvoiceNumber())
                 .purchaseDateTime(purchase.getPurchaseDateTime())
                 .totalAmount(purchase.getTotalAmount())
                 .paymentStatus(purchase.getPaymentStatus())
-                .createdBy(purchase.getCreatedBy().getUserId())
+                .createdBy(createdBy != null ? createdBy.getUserId() : null)
                 .build();
     }
 }

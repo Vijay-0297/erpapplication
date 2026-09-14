@@ -1,5 +1,0 @@
-$kind: http-request
-url: http://localhost:8080/api/categories/1
-method: DELETE
-settings: {}
-order: 5000
