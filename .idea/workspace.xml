@@ -5,41 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0afeb6c-8675-4423-9aa9-e67229e48fde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseReturnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/PurchaseReturnItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/SalesReturnItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/SettingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/controller/StockMovementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseReturnItemRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseReturnItemResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseReturnRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/PurchaseReturnResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SalesReturnItemRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SalesReturnItemResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SettingRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/SettingResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/StockMovementRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/dto/StockMovementResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/PurchaseReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/PurchaseReturnItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/SalesReturnItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/model/StockMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseReturnItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/PurchaseReturnRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/SalesReturnItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/SettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/repository/StockMovementRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseReturnItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseReturnItemServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseReturnService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/PurchaseReturnServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SalesReturnItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SalesReturnItemServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SettingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/SettingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/StockMovementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Erp/inventorymanagement/service/StockMovementServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
